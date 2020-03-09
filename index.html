@@ -1,0 +1,55 @@
+
+<html>
+  <head>
+    <title>WriterAI</title>
+<style>
+@font-face {
+    font-family: Ubuntu;
+    src: url("fonts/Ubuntu-Light.ttf") format("truetype");
+}
+
+</style>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" type="text/css" rel="stylesheet"/>
+  </head>
+  <body onload="complete_init()">
+    <div id="main">
+      <h1>WriterAI</h1>
+      <div>
+        WriterAI is a program that uses
+      the <a href="https://openai.com/blog/better-language-models/">GPT-2</a>
+      language model. It is a neural network of 1.5 billion
+      parameters. Type a text and let the neural network complete
+        it. Each try returns a different randomly chosen completion.
+        <p>
+          The same model can be used to <a href="sms.html">compress text messages</a>.
+      </div>
+      <select id="select" onchange="on_select()">
+        <option value="0">Select an example</option>
+        <option value="1">Unicorns that speak English</option>
+        <option value="2">What is my name</option>
+        <option value="3">C program</option>
+        <option value="4">Cooking instructions</option>
+        <option value="5">Linux</option>
+        <option value="6">Game of Thrones</option>
+        <option value="7">HTML</option>
+        <option value="8">The election</option>
+        <option value="9">Area 51</option>
+      </select>
+      <textarea id="input_text" rows="6" placeholder="Type your text here. It will be automatically completed with a (hopefully) realistic text.">
+      </textarea>
+      <div>
+        <button id="submit_button" onclick="button_submit()">Complete Text</button>
+        <button id="more_button" onclick="button_more()">More</button>
+      </div>
+      <div id="gtext1">
+        <h3 id="gtext_header">Completed Text:</h3>
+        <div id="gtext">
+        </div>
+      </div>
+      <div id="copyright">&copy; 2019 <a href="https://bellard.org">Fabrice Bellard</a> - <a href="tech.html">Technical notes</a></div>
+    </div>
+    <script type="text/javascript" src="text_complete.js"></script>
+  </body>
+</html>

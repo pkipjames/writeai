@@ -1,0 +1,54 @@
+* {font-family:Ubuntu,verdana,sans-serif;font-weight:100;}
+body{
+    background: #FAFAFA;
+    font-size: 16px;
+    color: #464646;
+}
+
+#main {
+    margin: 0 auto;
+    max-width: 640px;
+    border: 1px;
+}
+
+#select {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#input_text, #compressed_text {
+    width: 100%;
+}
+
+#submit_button #more_button #compress_button #decompress_button {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 12em;
+}
+
+#more_button {
+    display: none;
+}
+
+#copyright {
+    margin-top: 100px;
+    font-size: 10px;
+    text-align: center;
+}
+
+#gtext_header {
+    display: none;
+}
+
+#gtext {
+    white-space: pre-wrap;
+}
+
+.group {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.span_right {
+    float: right;
+}

@@ -1,0 +1,66 @@
+
+<html>
+  <head>
+    <title>Lossless Compression of English Short Messages</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" type="text/css" rel="stylesheet"/>
+  </head>
+  <body onload="complete_init()">
+    <div id="main">
+      <h1>Lossless Compression of English Short Messages</h1>
+      <div class="group">
+        <select id="select" onchange="on_select()">
+          <option value="0">Select an example</option>
+          <option value="1">Unicorns</option>
+          <option value="2">Compression</option>
+          <option value="3">SMS</option>
+          <option value="4">Name</option>
+        </select>
+        <textarea id="input_text" rows="6">
+        </textarea>
+        <button id="compress_button" onclick="button_compress()">Compress
+        </button>
+        <span id="input_len" class="span_right">
+        </span>
+      </div>
+      <div class="group">
+        <textarea id="compressed_text" rows="2">
+        </textarea>
+        <button id="decompression_button" onclick="button_decompress()">Decompress</button>
+        <span id="compressed_len" class="span_right">
+        </span>
+      </div>
+
+      <div class="group">
+        <p>
+          This lossless compressor achieves a much higher compression
+          rate on English texts than general purpose compressors. Its
+          typical compression ratio is 15% (number of output bits
+          divided by the number of input bits).
+        </p>
+        <p>
+        The compression is achieved by using the probability of the
+        next word computed by
+        the <a href="https://openai.com/blog/better-language-models/">GPT-2
+        language model</a> released by OpenAI. It is a neural network
+        of 1.5 billion parameters based on the Transformer
+        architecture. It is implemented using the
+        <a href="https://bellard.org/nncp">LibNC library</a> and runs
+        on a standard PC.
+        </p>
+        <p>
+          An arithmetic coder generates the bit stream. Each
+          compressed character holds 15 data bits by using the CJK and
+          the Hangul Syllables unicode ranges.
+        </p>
+        <p>
+          This compressor can be used to transmit text messages over
+          very low bandwidth channels.
+        </p>
+      </div>
+      
+      <div id="copyright">&copy; 2019 <a href="https://bellard.org">Fabrice Bellard</a></div>
+    </div>
+    <script type="text/javascript" src="sms.js"></script>
+  </body>
+</html>
